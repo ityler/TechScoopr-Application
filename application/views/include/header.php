@@ -22,17 +22,13 @@
    <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?php echo base_url('assets/js/modernizr-transitions.js')?>"></script>
    <script src="<?php echo base_url('assets/js/masonry.js')?>"></script>
-   
    <script type="text/javascript" src="<?php echo base_url('assets/fancybox/source/jquery.fancybox.pack.js')?>"></script>
    <script type="text/javascript" src="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-buttons.js')?>"></script>
    <script type="text/javascript" src="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-media.js')?>"></script>
    <script type="text/javascript" src="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-thumbs.js')?>"></script>
    <script src="http://platform.twitter.com/widgets.js"></script>
    <script src="<?php echo base_url('assets/js/tyler.js')?>"></script>
-  
-   <script src="<?php echo base_url('assets/js/custom.js') ?>"></script> 
    <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-37368569-1']);
   _gaq.push(['_trackPageview']);
@@ -42,7 +38,6 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script> 
 </head>
 <body>
