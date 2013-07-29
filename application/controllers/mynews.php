@@ -1,5 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
+/* Users saved news - MUST BE LOGGED IN
+ * Returns saved news
+ * Allows removal of saved news
+ */
 class Mynews extends Main_Controller
 {   
     function index() 
@@ -12,7 +15,6 @@ class Mynews extends Main_Controller
         if (!$this->tank_auth->is_logged_in()) {
             redirect('');
         }
-        
         if ($this->tank_auth->is_logged_in()) {
             $logged_in_id = $this->tank_auth->get_user_id();
             $data['userInfo'] = $this->users->get_user_by_id($logged_in_id, '1');
@@ -22,8 +24,7 @@ class Mynews extends Main_Controller
         $this->load->view('user', $data);
         $this->load->view('include/footer');
 }
-    
-
+    /* Get saved news */
     function savedNews() {
         $this->load->library('tank_auth');
         $this->load->model('unit_model');
@@ -42,7 +43,10 @@ class Mynews extends Main_Controller
         }
             
     }
-    
+    /* Remove logged in users saved news items
+     * @param           int
+     * @return          Yes/No 
+     */
     function removeSavedNews() {
         $this->load->library('tank_auth');
         $this->load->model('unit_model');
@@ -50,12 +54,10 @@ class Mynews extends Main_Controller
         if ($this->tank_auth->is_logged_in()) {
            $news_id = $this->input->post('id');
            $user_id = $this->tank_auth->get_user_id();
-           
            $this->unit_model->insertStar($user_id, $news_id);
            $output_string = 'Yes';  
             echo $output_string;
        }
-       
        if (!$this->tank_auth->is_logged_in()){
            $output_string = 'No';
            echo $output_string;

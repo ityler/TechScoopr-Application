@@ -1,18 +1,19 @@
-<?php if (!defined('BASEPATH')) die();
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/* Get news items for category filter requests
+ * 
+ */
 class Tag extends Main_Controller {
 
    function __construct() {
         parent::__construct();
    }
-   
    public function index()
    {
       $this->load->view('include/header');
       $this->load->view('frontpage');
       $this->load->view('include/footer');
    }
-   
-   /*** Display latest articles for AJAX request ***/
+   /* Display latest news items for filtered term requests */
    public function apple()
    {
        $term = "Apple";
@@ -43,6 +44,8 @@ class Tag extends Main_Controller {
        $data['results'] = $this->unit_model->searchByTerm($term);
        $this->output->set_output(json_encode($data));
    }
+   
+   /* Return news items filtered by source */
    public function mashable()
    {
        $source = "Mashable";
@@ -126,18 +129,6 @@ class Tag extends Main_Controller {
        $data['results'] = $this->unit_model->getApple();
        $this->output->set_output(json_encode($data));
    }
-   
-   public function search($term) 
-   {
-       $term = $this->input->post('SearchTerm');
-       $this->load->model('unit_model'); //this is the model to fetch the data
-       $dataResult['results']= $this->unit_model->searchByTerm($term);
-       $this->output->set_output(json_encode($dataResult));
-       $this->load->view('include/header');
-       $this->load->view('frontpage');
-       $this->load->view('include/footer');
-   }
-   
 }
 
 /* End of file tag.php */

@@ -6,7 +6,7 @@ RewriteEngine On
 #request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-#This last condition enables access to the images and css folders, and the robots.txt file
+#This last condition enables access to the images and css folders, and the robots.txt file(s)
 RewriteCond $1 !^(index\.php|public|images|robots\.txt|css)
 RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>

@@ -1,13 +1,14 @@
-<?php if (!defined('BASEPATH')) die();
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/* Stream viewer
+ * Display news items in a continuous refresh mode
+ */
 class Stream extends Main_Controller {
 
    public function index()
    {
       $this->load->helper('url');
       $this->load->library('tank_auth');
-      
       if ($this->tank_auth->is_logged_in()) {
-	
 	$userData['user_id']	= $this->tank_auth->get_user_id();
 	$userData['username']	= $this->tank_auth->get_username();
         $this->load->view('include/header_stream');
@@ -20,8 +21,9 @@ class Stream extends Main_Controller {
             $this->load->view('include/footer');
         }
    }
-   
-   /*** Display latest articles for AJAX request ***/
+   /* Get news items 
+    * @return           JSON
+    */
    function outputAjax()
    {
        $this->load->model('unit_model');

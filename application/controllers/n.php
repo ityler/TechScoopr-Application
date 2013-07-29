@@ -1,5 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
+/* Display news using short url for sharing 
+ * FORMAT - { techscoopr.com/n/index/news_id }
+ */
 class N extends Main_Controller
 {   
     function index() {
@@ -37,7 +39,6 @@ class N extends Main_Controller
            redirect('', 'refresh');
        }
     }
-    
 }
 
 /* End of file n.php */

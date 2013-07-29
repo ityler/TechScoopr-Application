@@ -1,4 +1,7 @@
-<?php if (!defined('BASEPATH')) die();
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/*
+ * Default controller for main layout and data requests
+ */
 class Frontpage extends Main_Controller {
 	
    public function index()
@@ -21,7 +24,9 @@ class Frontpage extends Main_Controller {
         }
    }
    
-   /*** Display latest articles for AJAX request ***/
+   /* Get latest news items 
+    * @return           JSON
+    */
    function outputAjax()
    {
        $this->load->model('unit_model');
@@ -29,7 +34,9 @@ class Frontpage extends Main_Controller {
        $this->output->set_output(json_encode($data));
    }
    
-   /*** Display latest articles for AJAX request ***/
+   /* Get latest news items structured for mobile application 
+    * @return           JSON
+    */
    function mobileAjax()
    {
        $this->load->model('unit_model');
@@ -40,24 +47,10 @@ class Frontpage extends Main_Controller {
        $this->output->set_output($data);
    }
    
-   function outputTagApple()
-   {
-       $this->load->model('unit_model');
-       $data['results'] = $this->unit_model->getApple();
-       $this->output->set_output(json_encode($data));
-   }
-   
-   public function search($term) 
-   {
-       $term = $this->input->post('SearchTerm');
-       $this->load->model('unit_model'); //this is the model to fetch the data
-       $dataResult['results'] = $this->unit_model->searchByTerm($term);
-       $this->output->set_output(json_encode($dataResult));
-       $this->load->view('include/header');
-       $this->load->view('frontpage');
-       $this->load->view('include/footer');
-   }
-   
+   /* Save user news items 
+    * @param            int
+    * @return           YES/NO
+    */
    function ajaxSave() {
        $this->load->library('tank_auth');
        $this->load->model('unit_model');

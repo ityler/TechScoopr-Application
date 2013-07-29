@@ -1,10 +1,6 @@
 <?php
 /*
  * Unit_model
- * An easier way to construct your unit testing
- * and pass it to a really nice looking page.
- *
- * @author sjlu
  */
 class Unit_model extends CI_Model {
 
@@ -47,7 +43,10 @@ class Unit_model extends CI_Model {
    }
 
    
-   /*** Gets the latest '50' articles sorted by PubDate ***/
+   /* Gets latest Articles sorted by PubDate
+    * @param            int
+    * @return           object array
+    */
     function getLatest()
     {
         $this->db->order_by('PubDate','DESC');
@@ -55,7 +54,10 @@ class Unit_model extends CI_Model {
         
             return $query->result();
     }
-    
+   /* Gets latest Articles for mobile sorted by PubDate
+    * @param            int
+    * @return           object array
+    */
     function getLatestMobile()
     {
         $this->db->order_by('PubDate','DESC');
@@ -64,19 +66,10 @@ class Unit_model extends CI_Model {
             return $query->result();
     }
     
-    /*** Get latest '50' articles based on search form query ***/
-    function getBySearch()
-    {
-        $match = $this->input->get('search');
-        $this->db->order_by('PubDate', 'DESC');
-        $this->db->like('Title', $match);
-        $query = $this->db->get('Articles', 50);
-            
-            return $query->result();
-                
-    }
-    
-    /*** Gets the latest '50' articles sorted by PubDate matching a set 'Source' string ***/
+   /* Gets latest Articles filtered by Source
+    * @param            string
+    * @return           object array
+    */
     function getBySource($source) 
     {
         $this->db->order_by('PubDate', 'DESC');
@@ -87,7 +80,10 @@ class Unit_model extends CI_Model {
         
         return $query->result();
     }
-    
+   /* Gets latest Articles filtered by Term
+    * @param            string
+    * @return           object array
+    */    
     function searchByTerm($term)
     {
         $this->db->order_by('PubDate', 'DESC');
@@ -97,7 +93,10 @@ class Unit_model extends CI_Model {
             return $query->result();
         
     }
-    
+   /* Gets user saved news items
+    * @param            int
+    * @return           object array
+    */     
     function getStar($user_id) {
         $this->db->select('id');
         $this->db->where('user_id', $user_id);
@@ -105,7 +104,10 @@ class Unit_model extends CI_Model {
         
             return $data->result();
     }
-    
+   /* Gets user saved news items
+    * @param            int
+    * @return           object array
+    */     
     function getStarNews($user_id) {
         $this->db->select('news_id');
         $this->db->where('user_id', $user_id);
@@ -132,10 +134,12 @@ class Unit_model extends CI_Model {
         }
     }
     
-    
+   /* Inserts saved news item for current user
+    * @param            int (news_id)
+    * @param            int (user_id)
+    * @return           object array
+    */ 
     function insertStar($user_id, $news_id) {
-        
-       
         $this->db->select('id'); //select id column
         $this->db->where('user_id', $user_id); //select id column with user_id matching $user_id
         $this->db->where('news_id', $news_id); //also matching news_id to $news_id
@@ -156,7 +160,10 @@ class Unit_model extends CI_Model {
            }
         
     }
-    
+   /* Gets news item by id
+    * @param            int
+    * @return           object array
+    */ 
     function getById($news_id) {
         $this->db->where('id', $news_id);
         $query = $this->db->get('Articles');
