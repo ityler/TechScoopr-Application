@@ -1,0 +1,247 @@
+body {
+    padding-bottom: 40px;
+    padding-top: 50px;
+    background-color: #282828;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+.brand {
+    margin-right: -10px !important;
+    
+}
+
+.navbar .brand {
+    padding: 10px 35px 10px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+    background-color: #282828;
+    border: none;
+}
+
+.sidebar-nav-fixed {
+    position: fixed;
+    top: 60px;
+    width: 130px;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#sidebar_shadow {
+    position: fixed;
+    width: 17px;
+    top: 0;
+    bottom: 0;
+    background: 
+        url(../img/content-shadow.png);
+    background-repeat: repeat-y;
+    margin-left: 131px;
+}
+
+#mason-container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-link-active {
+    color: #FFF !important;
+    text-shadow: 0px 0px 20px #FFF !important;
+}
+
+.item {
+    float: left;
+    position: relative;
+        width: 290px;
+        height: 275px;
+        border: none;
+        margin: 2px;
+        padding: 0px;
+        overflow: hidden;
+        top: 0px;
+        left: 0px;
+        -webkit-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+        -moz-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+        -ms-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+        -o-transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+        transition: left .4s ease-in-out, top .4s ease-in-out .4s;
+}
+
+.loading-article {
+             box-shadow: 0 0 1em #000;
+    -moz-box-shadow: 0 0 1em #000;
+    -webkit-box-shadow: 0 0 1em #000;
+}
+
+.item:hover {
+    box-shadow: 0 0 1em #888;
+    -moz-box-shadow: 0 0 1em #888;
+    -webkit-box-shadow: 0 0 1em #888;
+}
+
+.img-overlay {
+    background: rgba(0,0,0,0.8);
+    height: 55px;
+    position: absolute;
+    margin-top: -55px;
+    width: 100%;
+}
+
+.item-title {
+    font-size: 16px;
+    line-height: 15px;
+    color: #FFF;
+    margin: 2px;
+}
+
+.link {
+    display:none;
+}
+
+.box img {
+    width:100%;
+    height:100%;
+}
+
+.image-fade {
+    opacity:0;
+    -moz-transition: opacity 3s; /* Firefox 4 */
+    -webkit-transition: opacity 3s; /* Safari and Chrome */
+    -o-transition: opacity 3s;
+    transition: opacity 3s;
+}
+
+.art-description {
+    font-size: 15px;
+    color: #FFF;
+    margin: 5px;
+}
+
+.thumb-button {
+    margin: 5px;
+}
+
+#star-button {
+    
+}
+.the-sidebar {
+    position: fixed;
+    width: 135px;
+}
+
+.container-set {
+    margin-left:140px;
+}
+
+.saved {
+    
+}
+
+@media (max-width: 767px) {
+    .sidebar-nav-fixed {
+        position:static;
+        width:auto;
+    }
+}
+
+@media (max-width: 979px) {
+    .sidebar-nav-fixed {
+        top:70px;
+    }
+    .brand {
+        padding-left: 37px !important;
+    }
+    .nav-collapse .nav {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-set {
+        margin-left: 0px;
+    }
+    #sidebar_shadow {
+        display:none;
+    }
+    .the-sidebar {
+        display: none;
+    }
+    .item {
+        width:100%;
+    }
+}
+
+/**** Transitions ****/
+
+.masonry,
+.masonry .item {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .item {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+/* fancybox iframe nav */
+.fancybox-type-iframe .fancybox-nav {
+    width: 60px;       
+}
+
+.fancybox-type-iframe .fancybox-nav span {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.fancybox-type-iframe .fancybox-nav:hover span {
+    opacity: 1;
+}
+
+.fancybox-type-iframe .fancybox-next {
+    right: -60px;
+}
+
+.fancybox-type-iframe .fancybox-prev {
+    left: -60px;
+}
+
+.fancybox-title iframe {
+    min-height: 30px;
+    vertical-align: middle;
+}
+
+.hr-dark {
+    height: 5px;
+    border: 1;
+    box-shadow: inset 0 9px 4px -3px rgba(8,16,36,0.8);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+}
+
+.login-error {
+    color: red;
+}
