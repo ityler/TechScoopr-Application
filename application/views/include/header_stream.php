@@ -212,7 +212,7 @@ $(document).ready(function()
     $.getJSON(myurl, function (JSON) { data = JSON; setLayout(12); });
     
     
-/******* CONFIGURES INITIAL MASONRY LAYOUT ********/
+/* configures initial masonry layout */
     $('#mason-container').masonry({
                     itemSelector: '.item',
                     isAnimated: !Modernizr.csstransitions,
@@ -225,7 +225,7 @@ $(document).ready(function()
                 });
                 
 $('#start-stop').click(function() { toggle_speed_display(); });
-/****** CHECKS FOR ITEM HOVER, ADDS CLASS AND DISPLAYS ITEM DESCRIPTION *******/                
+/* checks for item hover and displays description under action */                
                
                // Flips article image and description on mouseover
                 var pause_area_JQ = $("#mason-container");
@@ -234,7 +234,7 @@ $('#start-stop').click(function() { toggle_speed_display(); });
                     {
                             $(this).addClass("mouse-inside-article");
                 
-                        $(this).find(".art-details").slideDown( 150 ); // ( speed value ) Lower is faster 
+                        $(this).find(".art-details").slideDown( 150 ); // ( speed value )
                         $(this).find(".img-cont").slideUp( 150 );
                     }, 
                     mouseleave: function() 
@@ -248,7 +248,7 @@ $('#start-stop').click(function() { toggle_speed_display(); });
                 
                 refreshIntervalId = setInterval(reloadNews, DEFAULT_INTERVAL);
 
-/********* handles pause and start *********/
+/* handles pause and start functionality */
 function toggle_speed_display() {
 	if ($('#start-stop').hasClass("stop"))
 	{
@@ -284,21 +284,13 @@ $('#mason-container').click(function() {
             $('#start-stop').addClass("stop");
             toggle_speed_display();
             }
- });
-
-/******* BETA Easter Egg ***********/
-$('#beta-ribbon').click(function() {
-          $(this).addClass('animate hinge'); 
-       });
-
-
-                
+ });                
 });
 
-/******** SET LAYOUT AND FILL INITIAL ITEMS ***********/
+/* wireframe layout and fill initial load news items */
 function setLayout(num) {
     $("#mason-container").empty();
-    var randomNumber=Math.floor(Math.random()*401) //returns random number between 0 and 400
+    var randomNumber=Math.floor(Math.random()*401) //returns random number
     var imageFix = "<?php echo base_url('imagefix/thumb.php/?src=') ?>";
     index = randomNumber;
     var contentNum = 0;
@@ -330,11 +322,11 @@ function setLayout(num) {
                                     + news_image + '"></div></div>');
                            
     }
-    index += num; // same as (index = index + num)
+    index += num;
     
 }
 
-/***************** Reload of news items *******************/
+/* refreshing of news items */
 function reloadNews() {
     var newsItemTotal = $('div.item').length; // Total number of news items pre loaded
     var randomNumber=Math.floor(Math.random()*401)
@@ -376,12 +368,12 @@ function reloadNews() {
    
 } 
 
-/**** Stop refreshing of articles in layout ****/
+/* Stop refreshing of articles in layout */
 function stopReload() {
     clearInterval(DEFAULT_INTERVAL);
 }
 
-/**** Start refreshing of articles in layout ****/
+/* Start refreshing of articles in layout */
 function startReload() {
     window.setInterval(function(){
         reloadNews();
