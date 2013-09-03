@@ -209,6 +209,28 @@ var saved_interval = reload_interval;
 
 $(document).ready(function()
 {        
+    activeNav();
+     
+function activeNav() {
+  function stripSlash(str) {
+    if(str.substr(-1) == '/') {
+      return str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  var url = window.location.pathname;  
+  var activePage = stripSlash(url);
+
+  $('.top-nav li a').each(function(){  
+    var currentPage = stripSlash($(this).attr('href'));
+
+    if (activePage == currentPage) {
+      $(this).addClass('nav-link-active'); 
+    } 
+  });
+};
+
     $.getJSON(myurl, function (JSON) { data = JSON; setLayout(12); });
     
     

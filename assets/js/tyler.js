@@ -133,6 +133,10 @@ $(document).ready(function()
         }
     }
      
+     activeNav();
+     
+
+
     // check for window scroll and load new data
     $(window).scroll(function () {
         
@@ -311,4 +315,24 @@ function fillData(num) {
         $("#mason-container").append('<div id="news" class="item box"><img onload="this.style.opacity=1;" class="art-image image-fade" src="' + news_image + '"><div class="img-overlay"><p class="item-title">' + news_title + '</p></div><div class="news-hover"><a title="" id="news" rel="news" class="fancybox fancybox.iframe news-link" href="' + news_link + '"target="_blank" value="' + news_id + '"><p class="art-description">' + news_description + '</p></a><div class="news-actions"><a class="star-button" href="#" value="'+ news_id +'"><i class="icon-ok-sign icon-white thumb-button"></i> Save</a></div></div></div>');                
     }
 }
+
+function activeNav() {
+  function stripSlash(str) {
+    if(str.substr(-1) == '/') {
+      return str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  var url = window.location.pathname;  
+  var activePage = stripSlash(url);
+
+  $('.top-nav li a').each(function(){  
+    var currentPage = stripSlash($(this).attr('href'));
+
+    if (activePage == currentPage) {
+      $(this).addClass('nav-link-active'); 
+    } 
+  });
+};
 

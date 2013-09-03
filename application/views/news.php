@@ -23,7 +23,7 @@
        </div>
        <div class="nav-collapse">
          <ul class="nav top-nav">
-           <li><a class="nav-link-active" href="<?php echo base_url();?>"><i class="icon-home icon-white"></i> Home</a></li>
+           <li><a href="<?php echo base_url();?>"><i class="icon-home icon-white"></i> Home</a></li>
            <li><a href="<?php echo base_url('/stream');?>"><i class="icon-play-circle icon-white"></i> Stream</a></li>
            <?php if ($this->tank_auth->is_logged_in()){
                echo "<li><a href='".base_url('/mynews')."'><i class=icon-inbox icon-white></i> My News</a></li>";
