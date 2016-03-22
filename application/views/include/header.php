@@ -16,8 +16,9 @@
    <link rel="stylesheet" href="<?php echo base_url('assets/fancybox/source/jquery.fancybox.css')?>" type="text/css" media="screen" />
    <link rel="stylesheet" href="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-buttons.css')?>" type="text/css" media="screen" />
    <link rel="stylesheet" href="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-thumbs.css')?>" type="text/css" media="screen" />
-   
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+   <!--
    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
    <script src="<?php echo base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?php echo base_url('assets/js/modernizr-transitions.js')?>"></script>
@@ -28,6 +29,7 @@
    <script type="text/javascript" src="<?php echo base_url('assets/fancybox/source/helpers/jquery.fancybox-thumbs.js')?>"></script>
    <script src="http://platform.twitter.com/widgets.js"></script>
    <script src="<?php echo base_url('assets/js/tyler.js')?>"></script>
+   -->
    <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-37368569-1']);
