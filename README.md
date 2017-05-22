@@ -45,6 +45,17 @@ application/config/config.php
 
 ```
 
+## Roadmap
+
+```
+Change user account system to social login
+```
+Twitter, Facebook, G+, etc...
+
+```
+Refresh user interface (sidebar)
+```
+Allow more control of sources and 'tags' that appear for every user
 
 ## Built With
 
