@@ -13,10 +13,6 @@ CodeIgniter V2.2.6+
 MySQL or other CI compatible database
 
 
-```
-Give examples
-```
-
 ### Installing
 
 Guide to get a development environment running
@@ -56,6 +52,11 @@ Twitter, Facebook, G+, etc...
 Refresh user interface (sidebar)
 ```
 Allow more control of sources and 'tags' that appear for every user
+
+```
+Parse each article content rather than open article via modal window (resolve cross-origin issue)
+```
+Need to modify news fetch and parse routines
 
 ## Built With
 
